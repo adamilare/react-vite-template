@@ -10,7 +10,7 @@ const getContents = createAsyncThunk(
     try {
       const { data } = await axios.get(`${baseUrl}`);
 
-      return fulfillWithValue(formatBooks(data));
+      return fulfillWithValue(data);
     } catch (error) {
       return rejectWithValue({ ...error.response.data.error });
     }
